@@ -272,12 +272,14 @@ textarea {
   footer styling starts here
 =================================*/ 
 
+footer { background: #c1c8cd; }
 
-
-
-
-
-
+p {
+  padding: 10px 0;
+  margin-top: 50px;
+  color: #000;
+  text-align: center;
+}
  /*=================================
   footer styling ends here
 =================================*/ 
