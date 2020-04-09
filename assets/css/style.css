@@ -177,6 +177,7 @@ h3 {
   background: #fff;
   display: inline-block;
   padding: 7px;
+  overflow: hidden;
 }
 
 .days ul > li {
@@ -190,9 +191,21 @@ h3 {
   padding: 10px 5px;
   align-items: center;
   border-radius: 4px;
+  position: relative;
+  left: -500%;
+  -webkit-animation: slide 1s forwards;
+  animation: slide 1s forwards;
 }
 
-label {
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
+}
+
+.form-group label {
   display: block;
   color: #7e8b95;
   font-size: 24px;
@@ -253,7 +266,7 @@ textarea {
 .form-control input {
   width: 50%;
   padding: 25px 12%;
-  border : none;
+  border : 1px solid #0186ef;
    -webkit-border-radius: 4px; 
   -moz-border-radius: 4px; 
   border-radius: 4px;
@@ -285,9 +298,37 @@ p {
 =================================*/ 
 
 /*media query starts*/
+/*media query for remove hover starts here*/
+@media only screen and (min-width: 1024px) {
+  header a:hover { color: #000; }  
+  .form-control input:hover {
+    background: #fff;
+    color: #7e8b95;
+  }
+}
+
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
+ 
+h3 { width: 81.5%; }
+.form-group label { margin-top: 20px;}
+.days,
+.days + div {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 
-
+.form-group input { width: 95%; }
 
 }  
+
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+  .error {
+    width: 48%;
+    top: -14px;
+    right: 11px;
+  }
+}
